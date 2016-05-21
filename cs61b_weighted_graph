@@ -1,0 +1,63 @@
+https://www.youtube.com/watch?v=zFbq8vOZ_0k&index=28&list=PLz9Z9AzAPxfgYGdQ7kgI-mhwR8flrVnOh
+Graph(continue)
+BFS
+We use a queue, so vertices are visited by distance from start vertex.
+public void bfs(Vertex u){
+
+}
+
+public class Vertex{
+   protected Vertex parent;
+   protexted int depth;
+
+   public void visit(Vertex origin){
+      this.parent = origin;
+      if(origin == null){
+         this.depth=0;
+      }
+      else{
+        this.depth=origin.depth+1;
+      }
+      
+   }
+}
+
+when edge(v, w) is traversed to visit w, depth of w + depth of v+1, & v becomes the "parent" of w.
+
+find shortest path from any vertex to start vertex by following parent pointers.
+
+A K B E O P
+
+Queue keep depth sequential
+
+BFS runs in O(|V|+|E|) time with adjacency list
+
+O(|V|sqrt) time for adjacency matrix
+Weighted Graphs
+each edge labeled with a numerical weight.
+distance between nodes... cost of flying one city to another city
+
+Adjacency matrix: array of ints/doubles/whatever
+
+-1: no edge here
+
+Adjacency list: Each listnode includes a weight
+Problems:"shortest path problem"
+
+"Minimum spanning tree" 
+Example: each node of the graph is an outlet or source of electicity
+use shorest wire possible
+edges labled with length of wire
+Connect all nodes with shortest length of wire?
+
+Kruskol's Algorithm
+https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
+G=(V, E): undirected graph
+spanning tree T=(V, F) of G is a graph 
+with same vertices as G, and |V|-edges of F(?) the form a tree
+If G is not connected, T is a forest, ... 
+If G is weighted, a "minimum spanning tree"
+
+Running time:
+3. sorting |E| edges takes O(|E|log|E|)
+4a < O(|E|log|E|) by lecture 33
