@@ -1,0 +1,61 @@
+
+http://www.jiuzhang.com/accounts/profile/
+本期课程可以预习的资料有：
+1. 倒排索引 Inverted Index
+https://zh.wikipedia.org/wiki/%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95
+https://en.wikipedia.org/wiki/Inverted_index
+2. 爬虫 Crawler
+https://en.wikipedia.org/wiki/Web_crawler
+3. 生产者消费者模型 Producer and Consumer
+
+那些年不容错过的硅谷IT公司
+http://www.bittiger.io/blog/post/2eJiCC7BMGitiWoYH
+http://www.bittiger.io/
+
+distributed file system(google won over sun)
+why? scenario design
+
+design a lookup service(microsoft)consistent hashing
+
+
+1 chunk = 64M
+
+if 100P how to save extra-large file in several machine?
+
+master-slave model
+one master + many chunk servers
+why not let mater to write?
+(QPS is big, bottleneck for master)
+
+Eolve
+how to optimize system
+master: chunck id--> chunk server
+master has to much info
+if chunk is broken, -> info master
+how to reduce master traffic/storage
+so change to :
+chunk11--> cs5-----> on cs5 (chunk01--> diskoffset1, chunk02--> diskoffset2,..... )
+
+master/slave
+
+design a lookup service
+snake:
+S:how to realize a look up?
+N:
+A:client+server
+K(Kilobyte): key value
+how to store? 
+1. HashMap
+    value= 1P, memory is enough, then what?
+2. NoSQL database
+  bigtable has write op, 
+  we only need read-only 
+3.GFS 
+http://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf
+
+
+how to supoort lokup for one file on disk?
+
+
+
+
