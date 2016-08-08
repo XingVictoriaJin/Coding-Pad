@@ -1,2 +1,1 @@
-# day1
-Xing Jin's three months' project 
+Questions from LeetCode/LintCode/QA/MianJing/XXXcode/
