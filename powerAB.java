@@ -1,5 +1,4 @@
-
-    
+/* Calculate power of two integer a and b.*/
     public long power(int a, int b){
         // assume 0^x, return 0
        if( a == 0 ){
