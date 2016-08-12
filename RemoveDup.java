@@ -1,4 +1,4 @@
-/*Element deduplication or removal in an array; 
+/*Element deduplication or removal in an sorted array; 
   use two variables: slow and fast */
 	public int[] removeDup( int[] input){
 		  // assume input is not null
