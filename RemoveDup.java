@@ -1,5 +1,6 @@
 /*Element deduplication or removal in an sorted array; 
   use two variables: slow and fast */
+  Q1:
 	public int[] removeDup( int[] input){
 		  // assume input is not null
 		  int slow = 0; 
@@ -11,7 +12,7 @@
 		  }
 		  return Arrays.copyOfRange(input, 0, slow+1);
 		}
-		
+Q2:
 /*if <=2 can be kept for each item */
 	public int[] removeDup( int[] input){
 		  // assume input is not null
@@ -24,7 +25,7 @@
 		  }
 		  return Arrays.copyOfRange(input, 0, slow);
 		}
-
+Q3:
 /* what if remove all the duplicate items */
 	public int[] removeDup(int[] input){
 		  // assume input is not null
@@ -41,3 +42,11 @@
           }
           return Arrays.copyOfRange(input, 0, slow);
 		}
+
+
+/* what about unsorted array, deduplication for adjacent letters repeatedly.*/
+public int[] removeDup(int[] input){
+	
+	
+}
+
