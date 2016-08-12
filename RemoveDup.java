@@ -24,3 +24,20 @@
 		  }
 		  return Arrays.copyOfRange(input, 0, slow);
 		}
+
+/* what if remove all the duplicate items */
+	public int[] removeDup(int[] input){
+		  // assume input is not null
+          int fast = 0;
+          int slow = 0;
+          while( fast < input.length){
+        	  	int begin = fast;
+        	  	while( fast < input.length && input[fast] == input[begin]){
+        	  		fast++;
+        	  	}
+        	  	if( (fast - begin) == 1 ){
+        	  		input[slow++] = input[begin++];
+        	  	}
+          }
+          return Arrays.copyOfRange(input, 0, slow);
+		}
