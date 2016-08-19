@@ -1,0 +1,36 @@
+  public List<List<Integer>> threeSum(int[] array, int target){
+	  List<List<Integer>> result = new ArrayList<List<Integer>>();
+	  if( array == null){
+		  return result;
+	  }
+	  Arrays.sort(array);
+	  /* assume array has length >= 3;
+	   * array[k] + (array[i] + array[j])*/
+	  for( int k = 0; k < array.length - 2; k++){ // remember to check k range
+			if(k > 0 && array[k] == array[k-1]){
+				continue;
+			}
+		    int i = k+1;
+		    int j = array.length - 1;
+			while( i < j){
+				//ignore all the consecutive duplicate values when we want 
+				// to determine the smaller element of the pair
+				while(i < j && array[i] == array[i-1]){
+					i++;
+				}
+				if(array[i] + array[j] + array[k] == target){
+					result.add(Arrays.asList(array[k], array[i], array[j]));
+					i++;
+					j--;
+				}else if(array[i] + array[j] + array[k]> target){
+					j--;
+				}
+				else{
+					i++;
+				}
+			}
+		  
+	  }
+	  
+	  return result;
+  }
