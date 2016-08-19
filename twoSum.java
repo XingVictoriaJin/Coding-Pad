@@ -7,6 +7,10 @@
   * */
 	public List<List<Integer>> twoSum(int[] array, int target){
 		List<List<Integer>> result = new ArrayList<List<Integer>>();
+			if(array == null){
+				 return result;
+			}
+	   	Arrays.sort(array);
 		int n = array.length;
 		int i = 0;
 		int j = n - 1;
@@ -41,6 +45,7 @@
 	   if(array == null){
 		   return result;
 	   }
+	   Arrays.sort(array);
 	   // create a hashset to store array's each item
 	   Set<Integer> set = new HashSet<Integer>();
 	   for(int i = 0; i < array.length; i++){
