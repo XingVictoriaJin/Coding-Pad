@@ -35,3 +35,27 @@
 		return result;
 		
 	}
+	
+	  public List<List<Integer>> twoSum(int[] array, int target){
+	   List<List<Integer>> result = new ArrayList<List<Integer>>();
+	   if(array == null){
+		   return result;
+	   }
+	   // create a hashset to store array's each item
+	   Set<Integer> set = new HashSet<Integer>();
+	   for(int i = 0; i < array.length; i++){
+		   if(i > 0 && array[i] == array[i-1]){
+			   continue;
+		   }
+		   if(set.contains(target - array[i])){
+			   List<Integer> pair = new ArrayList<Integer>();
+			   pair.add(array[i]);
+			   pair.add(target - array[i]);
+			   result.add(pair);
+		   }else{
+			   set.add(array[i]);
+		   }
+		   
+	   }
+	   return result;
+  }
