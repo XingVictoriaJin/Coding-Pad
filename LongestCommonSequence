@@ -34,6 +34,6 @@
 		if(arrayS[i] == arrayT[j]){
 			return 1 + longestHelper(arrayS, i + 1, arrayT, j + 1);
 		}else{
-			return Math.max(longestHelper(arrayS, i + 1, arrayT,j), longestHelper(arrayT, i, arrayT, j + 1));
+			return Math.max(longestHelper(arrayS, i + 1, arrayT,j), longestHelper(arrayS, i, arrayT, j + 1));
 		}
 	}
