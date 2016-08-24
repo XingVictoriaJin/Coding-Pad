@@ -1,0 +1,19 @@
+	public int longest(String s, String t){
+		if( s == null || t == null){
+			return 0;
+		}
+		
+		return longestHelper(s.toCharArray(), 0, t.toCharArray(), 0);
+	}
+	
+	public int longestHelper(char[] arrayS, int i, char[] arrayT, int j){
+		/*what if we can know the relationship between ith item of arrayS and jth of arrayT */
+		if( i == arrayS.length || j == arrayT.length){
+			return 0; // when one string arrives at end
+		}
+		if(arrayS[i] == arrayT[j]){
+			return 1 + longestHelper(arrayS, i + 1, arrayT, j + 1);
+		}else{
+			return Math.max(longestHelper(arrayS, i + 1, arrayT,j), longestHelper(arrayT, i, arrayT, j + 1));
+		}
+	}
