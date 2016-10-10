@@ -29,6 +29,36 @@ return its zigzag level order traversal as:
  */
 public class Solution {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        
+                   List<List<Integer>> result = new ArrayList<List<Integer>>();
+		   int flag = 0;
+		   TreeNode curr = root;
+		   Deque<TreeNode> stack = new LinkedList<TreeNode>();
+		   stack.offerFirst(curr);
+		   int size = 0;
+		   TreeNode node = null;		  
+		   while( !stack.isEmpty()){
+				size = stack.size();
+				 List<Integer> list = new ArrayList<Integer>();
+			  if(flag == 0){// need to print from left to right, store opposite				
+				while( size > 0) {
+				   node = stack.pollLast();
+				   list.add(node.val);
+				   if(node.left != null)stack.offerFirst(node.left);
+				   if(node.right != null)stack.offerFirst(node.right);
+				   size--;
+				 }
+			  }else{// need to print from right to left
+				while( size > 0) {
+			       node = stack.pollFirst();
+			       list.add(node.val);
+				   if(node.right != null)stack.offerLast(node.right);
+				   if(node.left != null)stack.offerLast(node.left);
+				   size--;
+				   }
+			  }
+			  result.add(list);
+			  flag = 1 - flag;
+		   }
+		   return result;
     }
 }
